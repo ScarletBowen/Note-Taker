@@ -13,8 +13,8 @@ app.use(express.json());
 // Get route to start with files in public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-require("./app/routing/api-routes.js")(app); // require the apiRoutes file and pass in the app
-require("./app/routing/html-routes.js")(app); // require the htmlRoutes file and pass in the app
+require("./app/routing/api-routes.js")(app); // require the api-routes file and pass in the app
+require("./app/routing/html-routes.js")(app); // require the html-routes file and pass in the app
 
 
 app.listen(PORT, () =>
