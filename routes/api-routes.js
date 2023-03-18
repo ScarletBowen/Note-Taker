@@ -1,15 +1,15 @@
 const fs = require('fs'); // File System
-// var uuid = require('uuid'); // UUID
+// 
 const router = require('express').Router();
 
 // routing
-     router.get('/api/notes', function(req, res) {
+     router.get('/api/notes', (req, res) => {
         fs.readFile('./db/db.json', 'utf8', function(err, data) {
              if (err) throw err;
              res.json(JSON.parse(data));
         });
     });
-
+  
      router.post('/api/notes', function(req, res) {
             fs.readFile('./db/db.json', 'utf8', function(err, data) {
                  if (err) throw err;
@@ -24,6 +24,8 @@ const router = require('express').Router();
                     });
                });
      }); 
+
+
       // router.delete('/api/notes/:id', function(req, res) {
       //       fs.readFile('./db/db.json', 'utf8', function(err, data) {
       //              if (err) throw err;
@@ -42,7 +44,4 @@ const router = require('express').Router();
       //       });
 
 
-
-
-// module.exports = {getAll, postNote, deleteNote};
 module.exports = router; // export the router
