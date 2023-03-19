@@ -4,8 +4,6 @@ const apiRoutes = require('./routes/api-routes.js');
 const htmlRoutes = require('./routes/html-routes.js');
 
 const router = require('express').Router();
-// const routeShell = router.use('/api', apiRoutes);
-// const htmlRouteShell = router.use('/html', htmlRoutes);
 
 const app = express(); // create an express app
 
@@ -15,8 +13,7 @@ const PORT = process.env.PORT || 3000; // set the port
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(routeShell);
-// app.use(htmlRouteShell);
+
 app.use('/api', apiRoutes);
 app.use('/html', htmlRoutes);
 
